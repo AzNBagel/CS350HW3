@@ -18,9 +18,11 @@ that location.  Find the maximum number of coins you can collect
 # Output: Maximum sum of non-zero values within the matrix in a left-right path only.
 
 def gold(matrix):
-    maxGold = matrix[0,0]
+    maxGold = []
 
-    for i in range()
+    # Assume a row of zeros and a column of zeros have been inserted.
+    for i in range(1, width(matrix+1)):
+        for j in range(1, len(matrix)):
+                matrix[i,j] += max(matrix[i,j-1], matrix[i-1,j])
 
-
-    return maxGold
+    return maxGold[N, M]
