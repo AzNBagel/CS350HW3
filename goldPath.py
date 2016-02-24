@@ -1,7 +1,4 @@
-
-
-
-""""
+"""
 Andrew McCann
 CS350
 Assignment #3
@@ -14,15 +11,16 @@ that location.  Find the maximum number of coins you can collect
 
 """""
 
-# Input: N by M matrix
+# Input: N+1 by M+1 matrix
 # Output: Maximum sum of non-zero values within the matrix in a left-right path only.
 
 def gold(matrix):
-    maxGold = []
-
     # Assume a row of zeros and a column of zeros have been inserted.
-    for i in range(1, width(matrix+1)):
-        for j in range(1, len(matrix)):
+    N = len(matrix)    # Rows
+    M = len(matrix[0]) # Columns
+    for i in range(1, N):
+        for j in range(1, M):
                 matrix[i,j] += max(matrix[i,j-1], matrix[i-1,j])
 
-    return maxGold[N, M]
+    return matrix[N-1, M-1]
+
