@@ -18,7 +18,6 @@ that location.  Find the maximum number of coins you can collect
 
 def gold(matrix):
     # Assume a row of zeros and a column of zeros have been inserted.
-
     N = len(matrix)    # Rows
     M = len(matrix[0]) # Columns
 
@@ -29,4 +28,5 @@ def gold(matrix):
                 gold_map[i,j] += max(gold_map[i,j-1], gold_map[i-1,j]) + matrix[i-1,j-1]
 
     return gold_map[N, M]
+
 
